@@ -6,3 +6,9 @@ print('We can even include "quotes" in strings' + " hello" + " world")
 greeting = "Hello"
 name = input("Please enter your name: ")
 print(greeting + ' ' + name)
+print('The pet shop owner said "No, no, \'e\'s uh, ...he\'s resting"')
+
+age = 24
+
+print(type(greeting))
+print(type(age))

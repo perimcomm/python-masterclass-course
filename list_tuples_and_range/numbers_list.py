@@ -1,16 +1,19 @@
+empty_list = []
 even = [2, 4, 6, 8]
 odd = [1, 3, 5, 7, 9]
 
-print(min(even))
-print(max(even))
+numbers = even + odd
+print(numbers)
 
-print(min(odd))
-print(max(odd))
+sorted_numbers = sorted(numbers)
+print(sorted_numbers)
 
-print()
-print(len(even))
-print(len(odd))
+digits = list("4567212489")
 
-print()
-print("Mississippi".count("iss")) #Conta os caracteres de uma String
+print(digits)
 
+#more_numbers = numbers[:]
+more_numbers = numbers.copy()
+print(more_numbers)
+print(numbers is more_numbers)
+print(numbers == more_numbers)

@@ -1,21 +1,15 @@
-welcome = ("Welcome to my nightmare", "Alice Cooper", 1975)
-bad = ("Bad company", "bad company", 1974)
-bugdie = ("nighflight", "bugdie", 1981)
-imelda = ("More mayhem", "emailda may", 2011)
-mettallica = ("ride the lightning", "metallica", 1984)
+albums  =   [("Welcome to my nightmare", "Alice Cooper", 1975),
+            ("Bad company", "bad company", 1974),
+            ("nighflight", "bugdie", 1981),
+            ("More mayhem", "emailda may", 2011),
+            ("ride the lightning", "metallica", 1984)
+            ]
 
-# print(mettallica)
-# print(mettallica[0])
-# print(mettallica[1])
-# print(mettallica[2])
+print(len(albums))
 
-title, artist, year = mettallica
-print(title)
-print(artist)
-print(year)
+for name, artist, year in albums:
+    print("Album: {}, Artist: {}, Year: {}".format(name, artist, year))
 
-table = ("Coffee table", 200, 100, 75, 34.50)
-print(table[1] * table[2])
-
-name, lenght, width, height, price = table
-print(lenght * width)
+for album in albums:
+    name, artist, year = album
+    print("Album: {}, Artist: {}, Year: {}".format(name, artist, year))

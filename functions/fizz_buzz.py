@@ -1,4 +1,4 @@
-def fizz_buzz(number):
+def fizz_buzz(number: int) -> str:
     if number % 5 == 0 and number % 3 == 0:
         return "fizz busss"
     elif number % 5 == 0:
@@ -7,8 +7,24 @@ def fizz_buzz(number):
         return "fizz "
 
 
-test = 16
-for i in range(1, 25):
-    print("The function returned", fizz_buzz(i))
+input("Play Fizz Buzz. Press enter to start")
+print()
+
+next_number = 0
+
+while next_number < 99:
+    next_number += 1
+    print(fizz_buzz(next_number))
+    next_number += 1
+    correct_answer = fizz_buzz(next_number)
+    players_answer = input("Your go: ")
+
+    if players_answer != correct_answer:
+        print("You lose the correct answer was {}".format(correct_answer))
+        break
+else:
+    print("Well done, you reached {}".format(players_answer))
+
+
 
 

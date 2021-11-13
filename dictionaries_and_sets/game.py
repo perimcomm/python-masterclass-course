@@ -1,9 +1,4 @@
-# my_list = ["a", "b", "c", "d"]
-# letters = "hauhauahaua"
-# numbers = "123456789"
-# new_string = ",".join(my_list)
-# new_string = ",".join(letters)
-# new_string = " mississippi ".join(numbers)
+import os
 
 locations = {0: "you are sitting in front of a computer learning python",
              1: "You are standing at the end of the road before a small brick building",
@@ -19,6 +14,10 @@ exits = [{"Q": 0},
          {"N": 1, "W": 2, "Q": 0},
          {"W": 2, "S": 1, "Q": 0}]
 
+vocabulary = {"QUIT": "Q",
+
+              }
+
 loc = 1
 while True:
     available_exits = ", ".join(exits[loc].keys())
@@ -27,6 +26,9 @@ while True:
 
     if loc == 0:
         break
+    else:
+        all_exists = exits[loc].copy()
+        all_exists.update(namedExists[loc])
 
     direction = input("Available exits are: " + available_exits).upper()
     print()
@@ -35,5 +37,5 @@ while True:
         loc = exits[loc][direction]
     else:
         print("You cannot go in that direction")
-`
-print(locations.items)
+
+print(os.walk)

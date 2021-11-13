@@ -1,10 +1,3 @@
-# my_list = ["a", "b", "c", "d"]
-# letters = "hauhauahaua"
-# numbers = "123456789"
-# new_string = ",".join(my_list)
-# new_string = ",".join(letters)
-# new_string = " mississippi ".join(numbers)
-
 locations = {0: "you are sitting in front of a computer learning python",
              1: "You are standing at the end of the road before a small brick building",
              2: "You are at the top of the hill",
@@ -19,6 +12,25 @@ exits = [{"Q": 0},
          {"N": 1, "W": 2, "Q": 0},
          {"W": 2, "S": 1, "Q": 0}]
 
+vocabulary = {"QUIT": "Q",
+              "NORTH": "N",
+              "SOUTH": "S",
+              "EAST": "E",
+              "WEST": "W",
+              "ROAD": "1",
+              "HILL": "2",
+              "BUILDING": "3",
+              "VALLEY": "4",
+              "FOREST": "5"
+              }
+
+namedExits = {1: {"2": 2, "3": 3, "5": 5, "4": 4},
+              2: {"5": 5},
+              3: {"1": 1},
+              4: {"1": 1, "2": 2},
+              5: {"2": 2, "1": 1}
+              }
+
 loc = 1
 while True:
     available_exits = ", ".join(exits[loc].keys())
@@ -27,6 +39,9 @@ while True:
 
     if loc == 0:
         break
+    else:
+        allExits = exits[loc].copy()
+        allExits.update(namedExits[loc])
 
     direction = input("Available exits are: " + available_exits).upper()
     print()
@@ -35,5 +50,3 @@ while True:
         loc = exits[loc][direction]
     else:
         print("You cannot go in that direction")
-`
-print(locations.items)

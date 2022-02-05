@@ -1,11 +1,8 @@
 from contents import pantry, recipes
 
-def add_shopping_item(data: dict, item: str, amount: int) -> None:
-    """Add a tuple containg `item` and  `amount` to the `data` dict. """
-    if item in data:
-        data[item] += amount
-    else:
-        data[item] = amount
+def add_shopping_item(data: list, item: str, amount: int) -> None:
+    """Add a tuple containg `item` and  `amount` to the `data` list. """
+    data[item] = data.setdefault(item, 0) + amount
 
 #display_dict = {str(index + 1): meal for index, meal in enumerate(recipes)}
 
@@ -14,7 +11,7 @@ display_dict = {}
 for index, value in enumerate(recipes, 1):
     display_dict[str(index)] = value
 
-shopping_list = {}
+shopping_list = []
 
 while True:
     #Display a menu of the recipes we know how to cook
@@ -40,8 +37,8 @@ while True:
                 quantity_to_buy = required_quantity - quantity_in_pantry
                 print(f"\tYou need to buy {quantity_to_buy} of {food_item}")
                 add_shopping_item(shopping_list, food_item, quantity_to_buy)
-
-
-for things in shopping_list.items():
-    print(things)
                 
+
+        
+
+
